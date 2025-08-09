@@ -3,15 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --navbar-toggle-color: rgb(39, 39, 39);
+    --nav-link-hover: black;
+}
+
+#app.darkGeneral {
+    --navbar-toggle-color: white;
+    --nav-link-hover: rgb(232, 232, 232);
+}
 body {
-    background-color: rgb(199, 199, 247);
+    background-color: rgb(255, 220, 220);
 }
 div.wrapper {
     display: flex;
     min-height: 100vh;
 }
 div.mainContent {
-    width: 90%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 div.intro, div#about, div#services, div#pricing, div#contact {
     padding-left: 60px;
@@ -24,20 +36,42 @@ nav ul li.nav-item {
     border-radius: 12px;
     padding: 0 10px;
 }
+nav .navbar-nav {
+    text-align: center;
+}
 nav ul li.nav-item:hover a {
-    transform: scale(1.3);
+    transform: scale(1.06);
+    color: var(--nav-link-hover) !important;
 }
 nav ul li.nav-item a {
     font-size: 20px;
-    border-bottom: solid 2px orange ;
-    transition: .5s transform ease-in-out;
+    border-bottom: solid 2px rgb(200, 70, 70);
+    transition: all .5s ease-in-out;
+}
+
+.navbar-toggler {
+    border: none !important;
+    padding: 0 !important;
+}
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.navbar-toggler i {
+    color: var(--navbar-toggle-color);
+    font-size: 32px;
 }
 @media all and (max-width:1200px) {
     nav ul li.nav-item {
         margin-left: 40px;
     }
     nav ul li.nav-item:hover a {
-        transform: scale(1.1);
+        transform: scale(1.06) !important;
+        color: var(--nav-link-hover) !important;
+    }
+    nav ul li.nav-item {
+        width: 50% !important;
+        margin: 0 auto !important;
     }
 }
 @keyframes roll-left {
@@ -64,13 +98,14 @@ nav ul li.nav-item a {
         transform: translateY(0px);
     }
 }
+
 div.intro div.img-container {
     position: relative;
     margin-left: 30px;
 }
 div.intro .circle {
     height: 380px;
-    width: 450px;
+    width: 400px;
     border-radius: 50%;
     display: inline-block;
     position: absolute;
@@ -106,7 +141,7 @@ div#about .img-container {
     border: solid 1px gray;
 }
 div#about .img-container:hover img {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 div#about .img-container img {
     position: absolute;
@@ -154,7 +189,7 @@ div#services, div#pricing, div#contact {
 }
 div#services .img-thumbnail {
    padding: .4rem;
-   box-shadow: 15px 20px 30px gray; 
+   box-shadow: 6px 8px 12px rgb(162, 162, 162); 
 }
 div#pricing .price {
     height: 120px;
@@ -172,11 +207,11 @@ div#pricing i {
     font-size: 25px;
 }
 div#pricing .card {
-    box-shadow: 10px 15px 70px gray;
-    transition: .75s transform ease-in-out;
+    box-shadow: 0px 0px 12px rgb(171, 171, 171);
+    transition: .5s transform ease-in-out;
 }
 div#pricing .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
 }
 div#pricing .card h5 {
     font-weight: bold;
@@ -187,7 +222,7 @@ div#pricing .card h5 {
     height: 35px;
     width: 35px;
     position: relative;
-    box-shadow: 10px 15px 50px gray;
+    box-shadow: 6px 8px 12px rgb(172, 172, 172);
 }
 .icon-container i {
     font-size: 20px;
@@ -239,7 +274,7 @@ div.settings {
     right: 8px;
     cursor: pointer;
     z-index: 4;
-    box-shadow: 0px 0px 22px white;
+    box-shadow: 0px 0px 12px white;
 }
 div.settings i {
     color: white;
@@ -259,6 +294,12 @@ div.sidebar {
     max-width: 350px;
     padding: 20px;
     position: relative;
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+
 }
 .btn {
     border: none;
@@ -270,7 +311,7 @@ div.i-container {
     cursor: pointer;
     position: absolute;
     left: -28px;
-    top: 210px;
+    top: 100px;
 }
 div.sidebar .darkM {
     display: flex;
@@ -289,7 +330,7 @@ div.sidebar .darkM i {
 }
 .darkCard {
   background-color: rgb(31, 31, 31);
-  box-shadow: 5px -5px 20px white !important;
+  box-shadow: 0px 0px 12px white !important;
 }
 .darkSevice {
     box-shadow: none !important;

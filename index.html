@@ -23,7 +23,8 @@
                         <a class="navbar-brand" href="#"><img src="IMAGES/logo.png" alt="" height="80px" width="120px"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <!-- <span class="navbar-toggler-icon"></span> -->
+                             <i class="bi bi-list"></i>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
@@ -47,17 +48,17 @@
                     </div>
                 </nav>
         
-                <div class="container intro mt-5">
+                <div class="container intro mt-5 mb-3">
                     <div class="row justify-content-evenly">
-                        <div class="col-md-6 col-sm-10 text-container">
+                        <div class="col-lg-6 col-md-8 col-sm-10 text-container">
                             <h1 class="mb-3">Need Cleaning Services ?</h1>
                             <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id labore harum suscipit
                                 sapiente! Nihil, praesentium.</p>
                             <a href="#services" class="btn btn-primary" :style="{backgroundColor: COLOR}">Know more</a>
                         </div>
-                        <div class="col-md-5 col-sm-10 img-container">
+                        <div class="col-lg-5 col-md-7 col-sm-10 img-container">
                             <div class="circle" :style="{backgroundColor: COLOR}"></div>
-                            <img src="IMAGES/intro.png" height="400px" alt="">
+                            <img src="IMAGES/intro.png" height="400px"  alt="">
                         </div>
                     </div>
                 </div>
@@ -98,8 +99,9 @@
                             <hr>
                             <h2 class="ms-5 mb-5">What we do ?</h2>
                         </div>
+                    
                     </div>
-                    <div  class="row d-flex justify-content-evenly ms-5 ps-3">
+                    <div  class="row d-flex justify-content-center ms-5 ps-3">
                         <div class="col-md-3 col-sm-6 ">
                             <div class="img-container mb-3">
                                 <img src="IMAGES/service1.jpg" height="150px" width="200px" alt=""
@@ -140,7 +142,7 @@
                         </div>
                     </div>
                     <div class="row d-flex justify-content-evenly">
-                        <div :class="[dark? 'darkCard' : '']" v-for="plan in plans" class="card mb-2" style="width: 20rem;">
+                        <div :class="[dark? 'darkCard' : '']" v-for="plan in plans" class="card mb-4" style="width: 20rem;">
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{plan.type}}</h5>
                                 <div class="price rounded-circle text-center">
@@ -272,7 +274,7 @@
 
     </div>
 
-
+ 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="main.js"></script>
